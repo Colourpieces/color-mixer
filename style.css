@@ -1,0 +1,46 @@
+:root {
+  --clr-red: 50;
+  --clr-green: 50;
+  --clr-blue: 50;
+  --clr-rgb: var(--clr-red), var(--clr-green), var(--clr-blue);
+
+  font-family: "Courier New", Courier, monospace;
+}
+
+body {
+  margin: 0;
+  background-color: rgb(var(--clr-red), var(--clr-green), var(--clr-blue));
+}
+
+header {
+  background-color: rgb(255, 255, 255, 0.3);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  padding: 2rem;
+}
+
+#colorHex {
+  margin-left: auto;
+}
+
+#red {
+  accent-color: red;
+}
+
+#green {
+  accent-color: green;
+}
+
+#blue {
+  accent-color: blue;
+}
+
+@media screen and (min-width: 700px) {
+  header {
+    flex-direction: column;
+  }
+}
