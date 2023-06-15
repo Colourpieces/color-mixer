@@ -43,21 +43,29 @@ function hexColour(c) {
   return 0;
 }
 
-/*
-https://css-tricks.com/updating-a-css-variable-with-javascript/
+//Extension - get random Color
 
-const root = document.querySelector(":root");
-let rootStyles = getComputedStyle(root);
-let red = rootStyles.getPropertyValue("--clr-red");
-console.log(red);
+const btnRandomColor = document.querySelector("#randomColor");
+btnRandomColor.addEventListener("click", () => {
+  const red = getRandomInt(0, 255);
+  const green = getRandomInt(0, 255);
+  const blue = getRandomInt(0, 255);
 
-root.style.setProperty("--clr-red", "70");
-console.log(red);
-*/
+  setColor(red, green, blue);
+  inputRed.value = red;
+  inputGreen.value = green;
+  inputBlue.value = blue;
+  //setInputRange(red);
+  //setInputRange(green);
+  //setInputRange(blue);
+});
 
-/*
-document.body.style.backgroundColor = rgb(inputRed, inputGreen, inputBlue); */
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
+}
 
-/*document.body.style.backgroundColor =
-  "rgb(" + inputRed + ", " + inputGreen + ", " + inputBlue + ")";
-*/
+function setInputRange(input, value) {
+  inputRed.value = value;
+}

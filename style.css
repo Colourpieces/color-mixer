@@ -2,7 +2,7 @@
   --clr-red: 50;
   --clr-green: 50;
   --clr-blue: 50;
-  --clr-rgb: var(--clr-red), var(--clr-green), var(--clr-blue);
+  /*--clr-rgb: var(--clr-red), var(--clr-green), var(--clr-blue);*/
 
   font-family: "Courier New", Courier, monospace;
 }
@@ -37,6 +37,10 @@ header {
 
 #blue {
   accent-color: blue;
+}
+
+button {
+  width: 20ch;
 }
 
 @media screen and (min-width: 700px) {
