@@ -47,25 +47,20 @@ function hexColour(c) {
 
 const btnRandomColor = document.querySelector("#randomColor");
 btnRandomColor.addEventListener("click", () => {
-  const red = getRandomInt(0, 255);
-  const green = getRandomInt(0, 255);
-  const blue = getRandomInt(0, 255);
+  fetch("https://dummy-apis.netlify.app/api/color")
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      }
+    })
+    .then((data) => {
+      red = data.rgb.r;
+      green = data.rgb.g;
+      blue = data.rgb.b;
 
-  setColor(red, green, blue);
-  inputRed.value = red;
-  inputGreen.value = green;
-  inputBlue.value = blue;
-  //setInputRange(red);
-  //setInputRange(green);
-  //setInputRange(blue);
+      setColor(red, green, blue);
+      inputRed.value = red;
+      inputGreen.value = green;
+      inputBlue.value = blue;
+    });
 });
-
-function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
-}
-
-function setInputRange(input, value) {
-  inputRed.value = value;
-}
