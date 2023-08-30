@@ -7,30 +7,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Color Mixer</title>
     <link rel="stylesheet" href="style.css">
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 
 <body>
-    <header>
+    <header id="app">
 
         <div>
             <label for="red">r</label>
-            <input type="range" min="0" max="255" id="red">
+            <input v-model="red" type="range" min="0" max="255" id="red">
         </div>
 
 
         <div>
             <label for="green">g</label>
-            <input type="range" min="0" max="255" id="green">
+            <input v-model="green" type="range" min="0" max="255" id="green">
         </div>
 
         <div>
             <label for="blue">b</label>
-            <input type="range" min="0" max="255" id="blue">
+            <input v-model="blue" type="range" min="0" max="255" id="blue">
         </div>
 
-        <div id="colorHex">#808080</div>
+        <div id="colorHex">{{hexColor}}</div>
 
-        <button id="randomColor">Random Color</button>
+        <button id="randomColor" @click="setRandomColor()">Random Color</button>
 
     </header>
     <script src="script.js"></script>

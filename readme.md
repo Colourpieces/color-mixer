@@ -39,3 +39,14 @@ The color mixer should then look like [this](https://coding-katas.netlify.app/co
 #### Video
 
 https://user-images.githubusercontent.com/16404104/148771378-2c53f195-281e-4a8a-963a-06d8149387b1.mov
+
+# Task: color-mixer App with Vue
+
+In this task we use the `v-on` directive to create a vue version of our [color-mixer app](https://github.com/coding-bootcamps-eu/web-apps-foundation/blob/main/web-app-basics/05-color-mixer.md) from the `web apps foundation` module.
+
+## Fulfill the following tasks:
+
+- [ ] Try to refactor your existing (plain js and html) color mixer with VueJS.
+  - [ ] If you didn't solve that issue before start from scratch!
+
+https://github.com/coding-bootcamps-eu/web-apps-with-vuejs/tree/main/part-1-vue-basics/tasks/color-mixer
