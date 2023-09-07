@@ -12,9 +12,9 @@ createApp({
   methods: {
     calcHexColour(c) {
       if (c < 256) {
-        return Math.abs(c).toString(16);
+        return ("0" + Math.abs(c).toString(16)).slice(-2);
       }
-      return 0;
+      return "00";
     },
 
     setRandomColor() {
@@ -29,6 +29,7 @@ createApp({
           this.green = data.rgb.g;
           this.blue = data.rgb.b;
         });
+      this.setColor;
     },
   },
 
@@ -41,12 +42,17 @@ createApp({
         this.calcHexColour(this.blue)
       );
     },
+  },
 
-    setColor() {
-      const root = document.querySelector(":root");
-      root.style.setProperty("--clr-red", this.red);
-      root.style.setProperty("--clr-green", this.green);
-      root.style.setProperty("--clr-blue", this.blue);
+  watch: {
+    red(oldValue, newValue) {
+      document.documentElement.style.setProperty("--clr-red", newValue);
+    },
+    green(oldValue, newValue) {
+      document.documentElement.style.setProperty("--clr-green", newValue);
+    },
+    blue(oldValue, newValue) {
+      document.documentElement.style.setProperty("--clr-blue", newValue);
     },
   },
 }).mount("#app");
